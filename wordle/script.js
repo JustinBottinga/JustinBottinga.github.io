@@ -65,7 +65,6 @@ function allBoxes(d) {
                 word = [];
                 wordString = "";
                 // check if they all share the 'correct' class 
-                /*
                 if (cells[j - 5].className == cells[j - 4].className && cells[j - 4].className == cells[j - 3].className
                     && cells[j - 3].className == cells[j - 2].className && cells[j - 2].className == cells[j - 1].className && cells[j - 1].className == "cell Correct") {
 
@@ -75,7 +74,6 @@ function allBoxes(d) {
                         location.reload()
                     }
                 }
-                */
                 let correctCells = 0;
                 for (let x = 5; x >= 1; x--) {
                     if (cells[j - x].className == 'cell Correct') {
