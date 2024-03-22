@@ -1,0 +1,11 @@
+:root {
+  --beige: #fff8f0;
+  --white: #ffffffff;
+  --dark-green: #3e5641;
+  --dark-blue: #011638;
+}
+
+body {
+  background-color: var(--beige) !important;
+  color: var(--dark-blue) !important;
+}

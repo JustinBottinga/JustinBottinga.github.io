@@ -1,0 +1,29 @@
+nav {
+  background-color: var(--dark-green) !important;
+}
+
+.navbar-brand {
+  color: var(--dark-blue);
+  background-color: var(--beige);
+  padding: 0 0.5rem 0 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.DropDown {
+  color: var(--dark-blue);
+  background-color: var(--beige);
+}
+
+.dropdown-menu {
+  background-color: var(--beige);
+}
+
+.dropdown-menu:hover .dropdown-item:hover {
+  background-color: var(--dark-blue);
+  color: var(--beige);
+}
+
+.dropdown-item {
+  color: var(--dark-blue);
+  background-color: var(--beige);
+}

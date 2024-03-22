@@ -1,0 +1,72 @@
+<div class="container">
+  <h1></h1>
+  <div class="">
+    <div class="col-8 col-lg-10 offset-lg-1 offset-2 Daily">
+      <h2>{{ daily.datetime | date : "EEEE, MMMM d" }}</h2>
+
+      <h1>{{ daily.temp }}&deg;</h1>
+      <p>{{ daily.description }}</p>
+      <div class="">
+        <div class="hourSlider text-center">
+          @for (hour of daily.hours; track $index) {
+
+          <div>
+            <p>{{ hour.datetime | time }}</p>
+
+            @if ((hour.datetime | gettime : true) < (daily.sunset | gettime :
+            true) && (hour.datetime | gettime : true) > (daily.sunrise | gettime
+            : true)) {
+            <i class="bi bi-sun-fill"></i>
+
+            } @else {
+            <i class="bi bi-moon-fill"></i>
+            }
+            <p>{{ hour.temp | number : "1.0-0" }}&deg;</p>
+          </div>
+
+          }
+        </div>
+        <div class="row">
+          <div class="col-8 col-lg-4">
+            <i class="bi bi-thermometer-half"></i> High/Low:
+          </div>
+          <div class="col-4 col-lg-2">
+            {{ daily.tempmax }}&deg;/{{ daily.tempmin }}&deg;
+          </div>
+
+          <div class="col-8 col-lg-4">
+            <i class="i bi bi-wind"></i> Windspeed:
+          </div>
+          <div class="col-4 col-lg-2">{{ daily.windspeed }}</div>
+        </div>
+        <div class="row">
+          <div class="col-8 col-lg-4">
+            <i class="bi bi-droplet-fill"></i> Humidity:
+          </div>
+          <div class="col-4 col-lg-2">{{ daily.humidity }}%</div>
+
+          <div class="col-8 col-lg-4">
+            <i class="i bi bi-sun-fill"></i> UV-index:
+          </div>
+          <div class="col-4 col-lg-2">{{ daily.uvindex }} out of 11</div>
+        </div>
+
+        <div class="row">
+          <div class="col-8 col-lg-4">
+            <i class="bi bi-eye-fill"></i> Visability:
+          </div>
+          <div class="col-4 col-lg-2">{{ daily.visibility }} / 10</div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-lg-4">
+            <i class="bi bi-brightness-alt-high-fill"></i> Sunrise/Sunset:
+          </div>
+          <div class="col-6 col-lg-4">
+            {{ daily.sunrise }} / {{ daily.sunset }}
+          </div>
+        </div>
+      </div>
+      <small></small>
+    </div>
+  </div>
+</div>

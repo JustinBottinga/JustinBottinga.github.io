@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>{{ address }}</h1>
+  <div class="">
+    <div class="col-md-8 Daily">
+      <h2>Today</h2>
+
+      <h1>{{ conditionsToday.temp }}&deg;</h1>
+      <p>{{ conditionsToday.conditions }}</p>
+      <div class="">
+        <div class="row">
+          <div class="col-6 col-lg-3">
+            <i class="bi bi-droplet-fill"></i> Humidity:
+          </div>
+          <div class="col-6 col-lg-3">{{ conditionsToday.humidity }}%</div>
+
+          <div class="col-6 col-lg-3">
+            <i class="i bi bi-wind"></i> Windspeed:
+          </div>
+          <div class="col-6 col-lg-3">{{ conditionsToday.windspeed }}</div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-lg-3">
+            <i class="bi bi-thermometer-half"></i> High/Low:
+          </div>
+          <div class="col-6 col-lg-3">{{ max }}&deg;/{{ min }}&deg;</div>
+
+          <div class="col-6 col-lg-3">
+            <i class="i bi bi-sun-fill"></i> UV-index:
+          </div>
+          <div class="col-6 col-lg-3">
+            {{ conditionsToday.uvindex }} out of 11
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-lg-3">
+            <i class="bi bi-eye-fill"></i> Visability:
+          </div>
+          <div class="col-6 col-lg-3">
+            {{ conditionsToday.visibility }} / 10
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <i class="bi bi-brightness-alt-high-fill"></i> Sunrise/Sunset:
+          </div>
+          <div class="col-6 col-lg-3">
+            {{ conditionsToday.sunrise }} / {{ conditionsToday.sunset }}
+          </div>
+        </div>
+      </div>
+      <small>{{ description }}</small>
+    </div>
+  </div>
+</div>

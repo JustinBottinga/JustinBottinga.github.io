@@ -1,0 +1,52 @@
+<h2>Forecast</h2>
+
+<div class="Border">
+  <div class="d-flex forecastText">
+    <i class="bi bi-calendar"></i>
+    <p>Two week forecast</p>
+  </div>
+
+  <div class="Showcase">
+    @if (twoWeekArray) { @for (item of twoWeekArray; track $index) { @if ($index
+    < 14) {
+
+    <div class="col-sm-4 col-md-3 col-xl-2 col-6 mx-3">
+      <a
+        [routerLink]="[route + '/weather/' + $index]"
+        routerLinkActive="router-link-active"
+      >
+        <div class="card" style="max-width: 200px">
+          @switch (item.conditions) { @case ('Partially cloudy') {
+          <img class="card-img-top" [src]="partCloudy" alt="Title" />
+          } @case ('Clear') {
+          <img class="card-img-top" [src]="sunny" alt="Title" />
+
+          } @case ('Rain, Partially cloudy' ) {
+          <img class="card-img-top" [src]="rain" alt="Title" />
+
+          } @case ('Rain, Overcast') {
+          <img class="card-img-top" [src]="rain" alt="Title" />
+
+          } @case ('Overcast') {
+          <img class="card-img-top" [src]="overcast" alt="Title" />
+
+          } @default {
+          <img class="card-img-top" [src]="sunny" alt="Title" />
+
+          }}
+          <div class="card-body">
+            <h5 class="card-title">
+              <small> {{ item.date | date : "EEEE M/d" }} </small>
+              <b>{{ item.temp }}</b
+              >&deg;
+            </h5>
+            <p class="card-text">{{ item.conditions }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    } } } @else {
+    <p>No data</p>
+    }
+  </div>
+</div>

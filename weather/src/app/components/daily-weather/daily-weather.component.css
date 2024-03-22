@@ -1,0 +1,31 @@
+.Daily {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 2px solid var(--dark-green);
+  border-radius: 0.3rem;
+}
+
+.hourSlider {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: var(--beige);
+  margin-bottom: 1rem;
+}
+
+.hourSlider p {
+  margin-bottom: 0rem;
+}
+
+.hourSlider div {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  margin: 0.5rem;
+  padding: 0 0.2rem 0 0.2rem;
+}
+
+.figure-caption {
+  color: var(--dark-blue);
+}

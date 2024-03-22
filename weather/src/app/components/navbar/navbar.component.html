@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['']">Weer app</a>
+    <div class="dropdown">
+      <button
+        class="btn dropdown-toggle DropDown"
+        type="button"
+        id="triggerId"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        More locations
+      </button>
+      <div class="dropdown-menu" aria-labelledby="triggerId">
+        <a class="dropdown-item" [routerLink]="['map']">Map</a>
+      </div>
+    </div>
+  </div>
+</nav>
